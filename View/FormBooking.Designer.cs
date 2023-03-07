@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBooking));
-            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxSurename = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxPatronymic = new System.Windows.Forms.TextBox();
             this.textBoxPassport = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,17 +62,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label6.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label6.Location = new System.Drawing.Point(290, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 31);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Name";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -84,29 +69,18 @@
             this.label3.Font = new System.Drawing.Font("Candara Light", 10F);
             this.label3.Location = new System.Drawing.Point(269, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 31);
+            this.label3.Size = new System.Drawing.Size(73, 34);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Surname";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label7.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label7.Location = new System.Drawing.Point(251, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 31);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Patronymic";
+            this.label3.Text = "Fullname";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Right;
             this.label8.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label8.Location = new System.Drawing.Point(135, 93);
+            this.label8.Location = new System.Drawing.Point(135, 34);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 31);
+            this.label8.Size = new System.Drawing.Size(207, 34);
             this.label8.TabIndex = 3;
             this.label8.Text = "Passport series and number";
             // 
@@ -115,9 +89,9 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Right;
             this.label9.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label9.Location = new System.Drawing.Point(187, 124);
+            this.label9.Location = new System.Drawing.Point(187, 68);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(155, 31);
+            this.label9.Size = new System.Drawing.Size(155, 34);
             this.label9.TabIndex = 3;
             this.label9.Text = "Registration address";
             // 
@@ -129,26 +103,10 @@
             this.textBoxSurename.Size = new System.Drawing.Size(443, 22);
             this.textBoxSurename.TabIndex = 4;
             // 
-            // textBoxName
-            // 
-            this.textBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxName.Location = new System.Drawing.Point(348, 34);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(443, 22);
-            this.textBoxName.TabIndex = 4;
-            // 
-            // textBoxPatronymic
-            // 
-            this.textBoxPatronymic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPatronymic.Location = new System.Drawing.Point(348, 65);
-            this.textBoxPatronymic.Name = "textBoxPatronymic";
-            this.textBoxPatronymic.Size = new System.Drawing.Size(443, 22);
-            this.textBoxPatronymic.TabIndex = 4;
-            // 
             // textBoxPassport
             // 
             this.textBoxPassport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPassport.Location = new System.Drawing.Point(348, 96);
+            this.textBoxPassport.Location = new System.Drawing.Point(348, 37);
             this.textBoxPassport.Name = "textBoxPassport";
             this.textBoxPassport.Size = new System.Drawing.Size(443, 22);
             this.textBoxPassport.TabIndex = 4;
@@ -156,7 +114,7 @@
             // textBoxAddress
             // 
             this.textBoxAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxAddress.Location = new System.Drawing.Point(348, 127);
+            this.textBoxAddress.Location = new System.Drawing.Point(348, 71);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(443, 22);
             this.textBoxAddress.TabIndex = 4;
@@ -166,9 +124,9 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
             this.label4.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label4.Location = new System.Drawing.Point(252, 155);
+            this.label4.Location = new System.Drawing.Point(252, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 31);
+            this.label4.Size = new System.Drawing.Size(90, 34);
             this.label4.TabIndex = 3;
             this.label4.Text = "Arrival date";
             // 
@@ -177,16 +135,16 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label5.Location = new System.Drawing.Point(223, 186);
+            this.label5.Location = new System.Drawing.Point(223, 136);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 31);
+            this.label5.Size = new System.Drawing.Size(119, 34);
             this.label5.TabIndex = 3;
             this.label5.Text = "Departure date";
             // 
             // dateTimePickerArrival
             // 
             this.dateTimePickerArrival.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerArrival.Location = new System.Drawing.Point(348, 158);
+            this.dateTimePickerArrival.Location = new System.Drawing.Point(348, 105);
             this.dateTimePickerArrival.Name = "dateTimePickerArrival";
             this.dateTimePickerArrival.Size = new System.Drawing.Size(443, 22);
             this.dateTimePickerArrival.TabIndex = 5;
@@ -194,19 +152,20 @@
             // dateTimePickerDeparture
             // 
             this.dateTimePickerDeparture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerDeparture.Location = new System.Drawing.Point(348, 189);
+            this.dateTimePickerDeparture.Location = new System.Drawing.Point(348, 139);
             this.dateTimePickerDeparture.Name = "dateTimePickerDeparture";
             this.dateTimePickerDeparture.Size = new System.Drawing.Size(443, 22);
             this.dateTimePickerDeparture.TabIndex = 5;
+            this.dateTimePickerDeparture.ValueChanged += new System.EventHandler(this.dateTimePickerDeparture_ValueChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Right;
             this.label10.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label10.Location = new System.Drawing.Point(228, 217);
+            this.label10.Location = new System.Drawing.Point(228, 170);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 31);
+            this.label10.Size = new System.Drawing.Size(114, 34);
             this.label10.TabIndex = 3;
             this.label10.Text = "Room number";
             // 
@@ -215,16 +174,16 @@
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Right;
             this.label11.Font = new System.Drawing.Font("Candara Light", 10F);
-            this.label11.Location = new System.Drawing.Point(160, 248);
+            this.label11.Location = new System.Drawing.Point(160, 204);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(182, 35);
+            this.label11.Size = new System.Drawing.Size(182, 37);
             this.label11.TabIndex = 3;
             this.label11.Text = "Cost of accommodation";
             // 
             // textBoxCost
             // 
             this.textBoxCost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxCost.Location = new System.Drawing.Point(348, 251);
+            this.textBoxCost.Location = new System.Drawing.Point(348, 207);
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.Size = new System.Drawing.Size(443, 22);
             this.textBoxCost.TabIndex = 7;
@@ -236,7 +195,7 @@
             this.label2.Font = new System.Drawing.Font("Candara Light", 10F);
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 31);
+            this.label2.Size = new System.Drawing.Size(222, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Search by full name";
             // 
@@ -256,11 +215,11 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxSearch, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 67);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 57);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 31);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 25);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
             // label1
@@ -272,7 +231,7 @@
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(107, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(684, 58);
+            this.label1.Size = new System.Drawing.Size(684, 48);
             this.label1.TabIndex = 1;
             this.label1.Text = "ООО «Уют» ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -286,7 +245,7 @@
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(98, 52);
+            this.pictureBox2.Size = new System.Drawing.Size(98, 42);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -302,7 +261,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(794, 58);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(794, 48);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // buttonCheckOut
@@ -312,10 +271,11 @@
             this.buttonCheckOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.buttonCheckOut.Location = new System.Drawing.Point(400, 3);
             this.buttonCheckOut.Name = "buttonCheckOut";
-            this.buttonCheckOut.Size = new System.Drawing.Size(391, 48);
+            this.buttonCheckOut.Size = new System.Drawing.Size(391, 49);
             this.buttonCheckOut.TabIndex = 1;
             this.buttonCheckOut.Text = "Check out";
             this.buttonCheckOut.UseVisualStyleBackColor = true;
+            this.buttonCheckOut.Click += new System.EventHandler(this.buttonCheckOut_Click);
             // 
             // buttonCheckIn
             // 
@@ -324,7 +284,7 @@
             this.buttonCheckIn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.buttonCheckIn.Location = new System.Drawing.Point(3, 3);
             this.buttonCheckIn.Name = "buttonCheckIn";
-            this.buttonCheckIn.Size = new System.Drawing.Size(391, 48);
+            this.buttonCheckIn.Size = new System.Drawing.Size(391, 49);
             this.buttonCheckIn.TabIndex = 0;
             this.buttonCheckIn.Text = "Check in";
             this.buttonCheckIn.UseVisualStyleBackColor = true;
@@ -339,11 +299,11 @@
             this.tableLayoutPanel3.Controls.Add(this.buttonCheckOut, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonCheckIn, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 393);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 335);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(794, 54);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(794, 55);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
             // tableLayoutPanel5
@@ -351,28 +311,24 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.48624F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.51376F));
-            this.tableLayoutPanel5.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label8, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 4);
             this.tableLayoutPanel5.Controls.Add(this.textBoxSurename, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxName, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxPatronymic, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxPassport, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxAddress, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 5);
-            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 6);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerArrival, 1, 5);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerDeparture, 1, 6);
-            this.tableLayoutPanel5.Controls.Add(this.label10, 0, 7);
-            this.tableLayoutPanel5.Controls.Add(this.label11, 0, 8);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxCost, 1, 8);
-            this.tableLayoutPanel5.Controls.Add(this.textBoxRoomNumber, 1, 7);
+            this.tableLayoutPanel5.Controls.Add(this.label8, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label10, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.label11, 0, 6);
+            this.tableLayoutPanel5.Controls.Add(this.textBoxPassport, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.textBoxAddress, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerArrival, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerDeparture, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.textBoxRoomNumber, 1, 5);
+            this.tableLayoutPanel5.Controls.Add(this.textBoxCost, 1, 6);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 104);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 88);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 9;
+            this.tableLayoutPanel5.RowCount = 7;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
@@ -380,15 +336,13 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(794, 283);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(794, 241);
             this.tableLayoutPanel5.TabIndex = 11;
             // 
             // textBoxRoomNumber
             // 
             this.textBoxRoomNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxRoomNumber.Location = new System.Drawing.Point(348, 220);
+            this.textBoxRoomNumber.Location = new System.Drawing.Point(348, 173);
             this.textBoxRoomNumber.Name = "textBoxRoomNumber";
             this.textBoxRoomNumber.Size = new System.Drawing.Size(443, 22);
             this.textBoxRoomNumber.TabIndex = 8;
@@ -410,14 +364,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.05541F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 393);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // FormBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 393);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBooking";
@@ -437,15 +391,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxSurename;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.TextBox textBoxPatronymic;
         private System.Windows.Forms.TextBox textBoxPassport;
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.Label label4;

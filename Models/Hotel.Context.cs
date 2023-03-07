@@ -32,5 +32,6 @@ namespace Cosiness.Models
         public virtual DbSet<Room> Room { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<StatusBooking> StatusBooking { get; set; }
     }
 }

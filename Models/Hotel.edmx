@@ -14,6 +14,7 @@
           <Property Name="GuestID" Type="int" Nullable="false" />
           <Property Name="ArrivalDate" Type="datetime" Nullable="false" />
           <Property Name="DepartureDate" Type="datetime" Nullable="false" />
+          <Property Name="StatusBookingID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -56,6 +57,16 @@
           </Key>
           <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Hotel.dbo.StatusBooking" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="StatusBooking">
+          <Key>
+            <PropertyRef Name="StatusBookingID" />
+            <PropertyRef Name="StatusBookingName" />
+          </Key>
+          <Property Name="StatusBookingID" Type="int" Nullable="false" />
+          <Property Name="StatusBookingName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -135,6 +146,12 @@
           <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusBooking" EntityType="Self.StatusBooking" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StatusBooking].[StatusBookingID] AS [StatusBookingID], 
+    [StatusBooking].[StatusBookingName] AS [StatusBookingName]
+    FROM [dbo].[StatusBooking] AS [StatusBooking]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Booking_Guest" Association="Self.FK_Booking_Guest">
             <End Role="Guest" EntitySet="Guest" />
             <End Role="Booking" EntitySet="Booking" />
@@ -170,6 +187,7 @@
           <Property Name="GuestID" Type="Int32" Nullable="false" />
           <Property Name="ArrivalDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StatusBookingID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Guest" Relationship="Self.FK_Booking_Guest" FromRole="Booking" ToRole="Guest" />
           <NavigationProperty Name="Room" Relationship="Self.FK_Booking_Room" FromRole="Booking" ToRole="Room" />
         </EntityType>
@@ -232,6 +250,14 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RoleID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="StatusBooking">
+          <Key>
+            <PropertyRef Name="StatusBookingID" />
+            <PropertyRef Name="StatusBookingName" />
+          </Key>
+          <Property Name="StatusBookingID" Type="Int32" Nullable="false" />
+          <Property Name="StatusBookingName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_Booking_Guest">
           <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
@@ -301,6 +327,7 @@
           <EntitySet Name="Room" EntityType="Self.Room" />
           <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="StatusBooking" EntityType="Self.StatusBooking" />
           <AssociationSet Name="FK_Booking_Guest" Association="Self.FK_Booking_Guest">
             <End Role="Guest" EntitySet="Guest" />
             <End Role="Booking" EntitySet="Booking" />
@@ -336,6 +363,7 @@
                 <ScalarProperty Name="GuestID" ColumnName="GuestID" />
                 <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
                 <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+                <ScalarProperty Name="StatusBookingID" ColumnName="StatusBookingID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -394,6 +422,14 @@
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusBooking">
+            <EntityTypeMapping TypeName="HotelModel.StatusBooking">
+              <MappingFragment StoreEntitySet="StatusBooking">
+                <ScalarProperty Name="StatusBookingID" ColumnName="StatusBookingID" />
+                <ScalarProperty Name="StatusBookingName" ColumnName="StatusBookingName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

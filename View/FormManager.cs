@@ -51,6 +51,7 @@ namespace Cosiness.View
                 LoadDataDrid();
             }
         }
+        public string search;
 
         public static string picName;
         public static string path = Application.StartupPath + "/Pict/";
@@ -116,6 +117,12 @@ namespace Cosiness.View
                     else if (people == 4)
                         rooms = rooms.Where(x => (x.QuantityOfPeople == 4)).ToList();
 
+                    //Сортировка по цене
+                    if (comboBoxCost.SelectedIndex == 0)
+                        rooms = rooms.OrderByDescending(x => x.Cost).ToList();
+                    else if (comboBoxCost.SelectedIndex == 1)
+                        rooms = rooms.OrderBy(x => x.Cost).ToList();
+
                     int i = 0;
                     foreach (var item in rooms)
                     {
@@ -141,6 +148,8 @@ namespace Cosiness.View
                             $"\nСтоимость номера: {item.Cost}" + " руб.";
                         i++;
                     }
+
+                    labelCount.Text = "Количество записей: " + rooms.Count;
                 }
                 else if (comboBoxData.SelectedIndex == 1)
                 {
@@ -179,6 +188,18 @@ namespace Cosiness.View
                     dataGridViewData.Columns.Add(dgvCost);
                     dataGridViewData.Columns[6].HeaderText = "Cost";
 
+                    DataGridViewTextBoxColumn dgvIDguest;
+                    dgvIDguest = new DataGridViewTextBoxColumn();
+                    dataGridViewData.Columns.Add(dgvIDguest);
+                    dataGridViewData.Columns[7].Visible = false;
+                    dataGridViewData.Columns[7].HeaderText = "IDguest";
+
+                    DataGridViewTextBoxColumn dgvAddress;
+                    dgvAddress = new DataGridViewTextBoxColumn();
+                    dataGridViewData.Columns.Add(dgvAddress);
+                    dataGridViewData.Columns[8].Visible = false;
+                    dataGridViewData.Columns[8].HeaderText = "Address";
+
                     dataGridViewData.ColumnHeadersVisible = true;
                     DataGridViewCellStyle style = dataGridViewData.ColumnHeadersDefaultCellStyle;
                     style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -187,21 +208,53 @@ namespace Cosiness.View
                     List<Models.Guest> guest = db.Guest.ToList();
                     List<Models.Room> room = db.Room.ToList();
 
+                    //Поиск
+                    if (search != null)
+                    {
+                        guest = guest.Where(x => x.GuestFullName.Contains(search)).ToList();
+                    }
+
                     int i = 0;
+                    int j = 0;
                     foreach (var item in bookig)
                     {
                         dataGridViewData.Rows.Add();
 
                         dataGridViewData.Rows[i].Cells[0].Value = item.BookingID;
                         dataGridViewData.Rows[i].Cells[1].Value = item.RoomID;
-                        dataGridViewData.Rows[i].Cells[2].Value = item.Guest.GuestFullName;
+                        if (search != null)
+                        {
+                            foreach (var name in guest)
+                            {
+                                dataGridViewData.Rows[j].Cells[2].Value = name.GuestFullName;
+                                dataGridViewData.Rows[i].Cells[3].Value = item.Guest.Passport;
+                                dataGridViewData.Rows[i].Cells[4].Value = item.ArrivalDate;
+                                dataGridViewData.Rows[i].Cells[5].Value = item.DepartureDate;
+                                dataGridViewData.Rows[i].Cells[6].Value = (item.DepartureDate - item.ArrivalDate).Days * item.Room.Cost;
+                                dataGridViewData.Rows[i].Cells[7].Value = item.GuestID;
+                                dataGridViewData.Rows[i].Cells[8].Value = item.Guest.Address;
+                                if (item.StatusBookingID == 1)
+                                    dataGridViewData.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
+                                if (j == guest.Count - 1)
+                                    return;
+                            }
+                        }
+                        else
+                            dataGridViewData.Rows[i].Cells[2].Value = item.Guest.GuestFullName;
                         dataGridViewData.Rows[i].Cells[3].Value = item.Guest.Passport;
                         dataGridViewData.Rows[i].Cells[4].Value = item.ArrivalDate;
                         dataGridViewData.Rows[i].Cells[5].Value = item.DepartureDate;
                         dataGridViewData.Rows[i].Cells[6].Value = (item.DepartureDate - item.ArrivalDate).Days * item.Room.Cost;
+                        dataGridViewData.Rows[i].Cells[7].Value = item.GuestID;
+                        dataGridViewData.Rows[i].Cells[8].Value = item.Guest.Address;
+                        if (item.StatusBookingID == 1)
+                            dataGridViewData.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
 
                         i++;
+                        j++;
                     }
+
+                    labelCount.Text = "Количество записей: " + bookig.Count;
                 }
             }
         }
@@ -229,6 +282,57 @@ namespace Cosiness.View
                     dateTimePickerDeparture.Enabled = true;
                 }
                 LoadDataDrid();
+        }
+
+        private void comboBoxRoomStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewData.Rows.Clear();
+            LoadDataDrid();
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+            search = textBoxName.Text;
+            dataGridViewData.Rows.Clear();
+            LoadDataDrid();
+        }
+
+        private void numericUpDownQuantityOfPeople_ValueChanged(object sender, EventArgs e)
+        {
+            dataGridViewData.Rows.Clear();
+            LoadDataDrid();
+        }
+
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewData.Rows.Clear();
+            LoadDataDrid();
+        }
+
+        private void dateTimePickerArrival_ValueChanged(object sender, EventArgs e)
+        {
+            dataGridViewData.Rows.Clear();
+            LoadDataDrid();
+        }
+
+        private void dateTimePickerDeparture_ValueChanged(object sender, EventArgs e)
+        {
+            dataGridViewData.Rows.Clear();
+            LoadDataDrid();
+        }
+
+        private void comboBoxCost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridViewData.Rows.Clear();
+            LoadDataDrid();
+        }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            FormReport report = new FormReport();
+            Hide();
+            report.ShowDialog();
+            Show();
         }
     }
 }

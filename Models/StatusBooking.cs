@@ -12,16 +12,9 @@ namespace Cosiness.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Booking
+    public partial class StatusBooking
     {
-        public int BookingID { get; set; }
-        public int RoomID { get; set; }
-        public int GuestID { get; set; }
-        public System.DateTime ArrivalDate { get; set; }
-        public System.DateTime DepartureDate { get; set; }
         public int StatusBookingID { get; set; }
-    
-        public virtual Guest Guest { get; set; }
-        public virtual Room Room { get; set; }
+        public string StatusBookingName { get; set; }
     }
 }
