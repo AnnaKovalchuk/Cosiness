@@ -38,7 +38,7 @@ namespace Cosiness.View
 
         private void FormBooking_Load(object sender, EventArgs e)
         {
-            textBoxRoomNumber.Text = roomID.ToString(); ;
+            textBoxRoomNumber.Text = roomID.ToString(); 
             textBoxRoomNumber.Enabled = false;
 
             dateTimePickerArrival.Value = arrival;
