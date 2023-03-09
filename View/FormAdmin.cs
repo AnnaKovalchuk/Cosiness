@@ -257,14 +257,18 @@ namespace Cosiness.View
                     List<Models.Guest> guest = db.Guest.ToList();
                     List<Models.Room> room = db.Room.ToList();
 
+
                     //Поиск
                     if (search != null)
                     {
-                        guest = guest.Where(x => x.GuestFullName.Contains(search)).ToList();
+                        //guest = guest.Where(x => x.GuestFullName.Contains(search)).ToList();
+                        bookig = bookig.Where(x => x.Guest.GuestFullName.Contains(search)).ToList();
                     }
 
                     int i = 0;
                     int j = 0;
+
+                    dataGridViewData.Rows.Clear();
                     foreach (var item in bookig)
                     {
                         dataGridViewData.Rows.Add();
@@ -273,20 +277,17 @@ namespace Cosiness.View
                         dataGridViewData.Rows[i].Cells[1].Value = item.RoomID;
                         if (search != null)
                         {
-                            foreach (var name in guest)
-                            {
-                                dataGridViewData.Rows[j].Cells[2].Value = name.GuestFullName;
-                                dataGridViewData.Rows[i].Cells[3].Value = item.Guest.Passport;
-                                dataGridViewData.Rows[i].Cells[4].Value = item.ArrivalDate;
-                                dataGridViewData.Rows[i].Cells[5].Value = item.DepartureDate;
-                                dataGridViewData.Rows[i].Cells[6].Value = (item.DepartureDate - item.ArrivalDate).Days * item.Room.Cost;
-                                dataGridViewData.Rows[i].Cells[7].Value = item.GuestID;
-                                dataGridViewData.Rows[i].Cells[8].Value = item.Guest.Address;
-                                if (item.StatusBookingID == 1)
-                                    dataGridViewData.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
-                                if(j == guest.Count - 1)
-                                    return;
-                            }
+                            dataGridViewData.Rows[j].Cells[2].Value = item.Guest.GuestFullName;
+                            dataGridViewData.Rows[i].Cells[3].Value = item.Guest.Passport;
+                            dataGridViewData.Rows[i].Cells[4].Value = item.ArrivalDate;
+                            dataGridViewData.Rows[i].Cells[5].Value = item.DepartureDate;
+                            dataGridViewData.Rows[i].Cells[6].Value = (item.DepartureDate - item.ArrivalDate).Days * item.Room.Cost;
+                            dataGridViewData.Rows[i].Cells[7].Value = item.GuestID;
+                            dataGridViewData.Rows[i].Cells[8].Value = item.Guest.Address;
+                            if (item.StatusBookingID == 1)
+                                dataGridViewData.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
+                            if(j == guest.Count - 1)
+                                return;
                         }
                         else
                             dataGridViewData.Rows[i].Cells[2].Value = item.Guest.GuestFullName;
